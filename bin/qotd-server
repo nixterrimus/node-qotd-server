@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+var qotd = require('../lib');
+
+var port = process.env.PORT || 8017;
+var quoter = new qotd.FortuneQuoter('./fortune/wisdom');
+var server = new qotd.QOTDServer(quoter, port);
+server.startOnAllInterfaces();
